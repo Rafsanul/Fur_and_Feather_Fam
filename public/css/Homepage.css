@@ -1,0 +1,156 @@
+/* Reset and basic styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #8a3dd1;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar nav ul li {
+    margin: 0;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('/images/hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-content .btn-primary {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #ff5b49;
+}
+
+/* Features Section */
+.features {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.feature-box {
+    padding: 20px;
+    background-color: #f1f5ff;
+    border: 1px solid #e3eafc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Footer */
+.footer {
+    background-color: #3b4d6a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #5c7cfa;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .features {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .feature-box {
+        flex: 1;
+        margin: 0 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 64px;
+    }
+}

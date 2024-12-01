@@ -1,0 +1,93 @@
+/* Reset and Base Styles */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4; /* Light Gray Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container */
+.login-container {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6a1b9a; /* Purple Heading */
+    font-size: 24px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Dark Gray */
+}
+
+input[type="text"], 
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #aaa; /* Light Gray Placeholder */
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    background-color: #8e24aa; /* Violet */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6a1b9a; /* Darker Purple */
+}
+
+/* Links */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #6a1b9a; /* Purple Links */
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*
