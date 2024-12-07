@@ -1,0 +1,150 @@
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #6a1b9a; /* Purple */
+    color: white;
+    padding: 15px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ffeb3b; /* Yellow on hover */
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover; /* Background Image */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-content .btn-primary {
+    background-color: #8e24aa; /* Violet */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #6a1b9a; /* Darker Purple */
+    cursor: pointer;
+}
+
+/* Features Section */
+.features {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.features .container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.feature-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+}
+
+.feature-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.feature-box p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer a {
+    color: #6a1b9a; /* Purple */
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffeb3b; /* Yellow on hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .features .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

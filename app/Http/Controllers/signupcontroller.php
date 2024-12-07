@@ -25,7 +25,7 @@ class signupcontroller
     $data->uname = $req->username;
     $data->mail = $req->email;
     $data->bday = $req->birthdate;
-    $data->pass = Hash::make($req->password); 
+    $data->pass = $req->password; 
     $data->save();
 
     return redirect('/')->with('success', 'Signup successful! Please log in.');

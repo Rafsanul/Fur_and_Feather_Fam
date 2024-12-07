@@ -1,0 +1,129 @@
+/* General Reset */
+body, h1, h2, h5, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0077b6;
+    padding: 15px 0;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin-left: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    background-color: #005f8a;
+    border-radius: 5px;
+}
+
+/* Pet Adoption Section */
+.pets-adoption {
+    padding: 50px 20px;
+    background-color: #fdfdfd;
+}
+
+.pets-adoption .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pets-adoption h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0077b6;
+}
+
+.pets-adoption .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h5 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -12,12 +12,23 @@
             <h1>Fur & Feather Fam</h1>
             <nav>
                 <ul>
-                    
                     <li><a href="/caretips">Care Tips</a></li>
                     <li><a href="/contact">Contact</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/signup">Sign up</a></li>
-                    
+                    @auth
+                        <!-- If the user is logged in -->
+                        <li><span class="user-name">Welcome, {{ Auth::user()->name }}!</span></li>
+                        <li>
+                            <form action="/logout" method="POST" style="display: inline;">
+                                @csrf
+                                <button type="submit" class="logout-button">Logout</button>
+                            </form>
+                        </li>
+                    @else
+                        <!-- If the user is not logged in -->
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign up</a></li>
+                        <li><a href="/admin/login">Admin Login</a></li>
+                    @endauth
                 </ul>
             </nav>
         </div>
@@ -38,11 +49,11 @@
                 <p>Browse through a wide range of pets ready to find their forever home.</p>
             </div>
             <div class="feature-box">
-                <h3>Care Tips</h3>
+                <h3><a href="/caretips">Care Tips</a></h3>
                 <p>Learn how to take care of your furry, feathery, or scaly friends.</p>
             </div>
             <div class="feature-box">
-                <h3>Connect with Us</h3>
+                <h3><a href="/contact">Connect with Us</a></h3>
                 <p>Have questions? Our team is here to help you with all pet-related inquiries.</p>
             </div>
         </div>

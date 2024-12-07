@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('css/Homepage.css') }}">
+    <title>Pet Adoption</title>
+    <link rel="stylesheet" href="{{ asset('css/pet.css') }}">
 </head>
 <body>
     <!-- Navbar -->
@@ -18,15 +18,12 @@
             <nav>
                 <ul>
                     @if(session()->has('user'))
-                        <!-- User is logged in, show Dashboard and Logout -->
                         <li><a href="/userhome">Home</a></li>
                         <li><a href="/caretips">Care Tips</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <!-- <li><a href="/profile/{{ session('user')->uname }}">Profile</a></li> -->
-                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/userprofile">Profile</a></li>
                         <li><a href="/logout">Logout</a></li>
                     @else
-                        <!-- User is not logged in, show Login and Sign Up -->
                         <li><a href="/">Home</a></li>
                         <li><a href="/caretips">Care Tips</a></li>
                         <li><a href="/contact">Contact</a></li>
@@ -38,28 +35,31 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Welcome to Fur & Feather Fam!</h2>
-            <p>Your trusted portal for adopting and caring for pets.</p>
-            <a href="/pets" class="btn-primary">Find Your Companion</a>
-        </div>
-    </section>
-
-    <section class="features">
+    <!-- Pet Adoption Section -->
+    <section class="pets-adoption">
         <div class="container">
-            <div class="feature-box">
-                <h3>Adopt a Pet</h3>
-                <p>Browse through a wide range of pets ready to find their forever home.</p>
-            </div>
-            <div class="feature-box">
-                <h3>Care Tips</h3>
-                <p>Learn how to take care of your furry, feathery, or scaly friends.</p>
-            </div>
-            <div class="feature-box">
-                <h3>Connect with Us</h3>
-                <p>Have questions? Our team is here to help you with all pet-related inquiries.</p>
-            </div>
+            <h2 class="text-center">Pets Available for Adoption</h2>
+            @if ($pets->isEmpty())
+                <p class="text-center">No pets are currently available for adoption. Please check back later!</p>
+            @else
+                <div class="row">
+                    @foreach ($pets as $pet)
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <a href="{{ url('/pets/' . $pet->id) }}">
+                                <img src="{{ $pet->photo ? asset('storage/' . $pet->photo) : asset('images/default-pet.png') }}" 
+                                         class="card-img-top" 
+                                         alt="{{ $pet->name }}" 
+                                         style="height: 200px; object-fit: cover;">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">{{ $pet->name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </section>
 

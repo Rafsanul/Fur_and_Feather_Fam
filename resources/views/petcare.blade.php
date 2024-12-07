@@ -7,13 +7,24 @@
     <link rel="stylesheet" href="{{ asset('css/petcare.css') }}">
 </head>
 <body>
+    <!-- Navbar -->
     <header class="navbar">
         <div class="container">
             <h1>Fur & Feather Fam</h1>
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    @if(session()->has('user'))
+                        <!-- User is logged in, show Dashboard and Logout -->
+                        <li><a href="/userhome">Home</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    @else
+                        <!-- User is not logged in, show Login and Sign Up -->
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                    @endif
                 </ul>
             </nav>
         </div>
@@ -22,7 +33,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Pet Care Tips</h1>
-            <p3>Learn how to take care of your furry, feathery, or scaly friends.</p3>
+            <p>Learn how to take care of your furry, feathery, or scaly friends.</p>
         </div>
     </section>
 

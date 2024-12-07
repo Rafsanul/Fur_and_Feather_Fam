@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Fur & Feather Fam</title>
+    <title>Contact - Fur & Feather Fam</title>
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Navbar -->
     <header class="navbar">
         <div class="container">
             <h1>Fur & Feather Fam</h1>
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/caretips">Care Tips</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/signup">Sign Up</a></li>
+                    @if(session()->has('user'))
+                        <!-- User is logged in, show Dashboard and Logout -->
+                        <li><a href="/userhome">Home</a></li>
+                        <li><a href="/caretips">Care Tips</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    @else
+                        <!-- User is not logged in, show Login and Sign Up -->
+                        <li><a href="/userhome">Home</a></li>
+                        <li><a href="/caretips">Care Tips</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                    @endif
                 </ul>
             </nav>
         </div>
@@ -62,3 +69,4 @@
     </footer>
 </body>
 </html>
+

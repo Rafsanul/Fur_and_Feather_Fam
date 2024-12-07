@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Register; 
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController 
 {
@@ -20,14 +21,13 @@ class LoginController
             'username' => 'required',
             'password' => 'required',
         ]);
+        $user = Register::where('uname', $request->username)->first();
 
-        
-        $user = Register::where('uname', $request->username)->where('pass', $request->password)->first();
-
-        if ($user) {
+        if ($user && $user->pass === $request->password) {
+            // Manually logging in the user by putting user info in session
             Session::put('user', $user);
-            return redirect('/userhome');
 
+            return redirect('/userhome');
         } else {
             return back()->withErrors(['Invalid credentials! Please try again.']);
         }
@@ -40,4 +40,7 @@ class LoginController
 
         return redirect('/');
     }
+    
+
+
 }

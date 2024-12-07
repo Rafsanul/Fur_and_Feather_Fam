@@ -21,8 +21,14 @@ class Homecontroller
     public function petcare(){
         return view('petcare');
     }
+
     public function contact(){
         return view('contact');
+    }
+
+    public function admin()
+    {
+        return view('dashboard'); 
     }
 
 }
